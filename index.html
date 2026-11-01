@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coffee Tracker</title>
+  
+  <!-- Manifest Bağlantısı -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#6f4e37">
+
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4ece1; color: #4a2c2a; margin: 0; padding: 20px; }
     .container { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
@@ -40,6 +45,11 @@
       count = 0;
       localStorage.setItem('coffeeCount', 0);
       document.getElementById('coffeeCount').innerText = count;
+    }
+
+    // Service Worker Kaydı
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
     }
   </script>
 </body>
