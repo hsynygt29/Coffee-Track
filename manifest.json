@@ -1,1 +1,16 @@
-
+{
+  "short_name": "CoffeeTracker",
+  "name": "Coffee Tracker Application",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4ece1",
+  "theme_color": "#6f4e37",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2935/2935413.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
