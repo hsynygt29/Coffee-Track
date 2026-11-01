@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Tracker</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4ece1; color: #4a2c2a; margin: 0; padding: 20px; }
+    .container { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h2 { text-align: center; color: #6f4e37; margin-top: 0; }
+    .btn { display: block; width: 100%; padding: 14px; margin: 10px 0; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+    .btn-add { background: #6f4e37; color: white; }
+    .btn-reset { background: #d9534f; color: white; }
+    .stats { text-align: center; margin: 20px 0; background: #fdf8f5; padding: 15px; border-radius: 8px; border: 1px solid #e0d0c0; }
+    .count { font-size: 36px; font-weight: bold; color: #6f4e37; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>☕ Coffee Tracker</h2>
+    <div class="stats">
+      <p style="margin:0; font-size:14px; color:#777;">Coffees Consumed Today</p>
+      <div class="count" id="coffeeCount">0</div>
+    </div>
+    <button class="btn btn-add" onclick="addCoffee()">+1 Add Coffee</button>
+    <button class="btn btn-reset" onclick="resetCount()">Reset Counter</button>
+  </div>
+
+  <script>
+    let count = localStorage.getItem('coffeeCount') || 0;
+    document.getElementById('coffeeCount').innerText = count;
+
+    function addCoffee() {
+      count++;
+      localStorage.setItem('coffeeCount', count);
+      document.getElementById('coffeeCount').innerText = count;
+    }
+
+    function resetCount() {
+      count = 0;
+      localStorage.setItem('coffeeCount', 0);
+      document.getElementById('coffeeCount').innerText = count;
+    }
+  </script>
+</body>
+</html>
